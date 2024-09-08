@@ -19,7 +19,7 @@ Paper:
 # Description
 This repository mainly contains the following modules: 
 
-![Example](https://github.com/SmartGroupSystems/Dynamic-Planner/blob/main/gif/tutieshi_640x360_18s.gif)
+
 
 # Compile
 __Tested environment__: Ubuntu 20.04 + ROS Noetic
@@ -30,9 +30,9 @@ __Tested environment__: Ubuntu 20.04 + ROS Noetic
 __Click-map__: You can use the two built-in components of rviz to click on the map to generate static and dynamic obstacles, respectively, like this:
 
 
-# Testing Dynamic_Planner
+# Test Dynamic_Planner
 
-
+![Example](https://github.com/SmartGroupSystems/Dynamic-Planner/blob/main/gif/tutieshi_640x360_18s.gif)
 
 # Known Issues:
 
