@@ -1,9 +1,41 @@
 # Dynamic-Planner
-A planner designed for quadrotors in dynamic complex environments.
+A planner designed for quadrotors in dynamic complex environments. If you have any questions, please ask in the "issues" section or send email to ```ruochengli@bit.edu.cn```, thanks!
 
 Video link：https://www.youtube.com/watch?v=TOEeoFO4OxY
 
-The code will be released after the paper is accepted.
+Paper:
+
+```
+@article{li2024autonomous,
+  title={Autonomous Navigation of Quadrotors in Dynamic Complex Environments},
+  author={Li, Ruocheng and Xin, Bin},
+  journal={IEEE Transactions on Industrial Electronics},
+  year={2024},
+  publisher={IEEE}
+}
+
+```
+
+# Description
+This repository mainly contains the following modules: 
 
 ![Example](https://github.com/SmartGroupSystems/Dynamic-Planner/blob/main/gif/tutieshi_640x360_18s.gif)
 
+# Compile
+__Tested environment__: Ubuntu 20.04 + ROS Noetic
+
+
+# Building Simulation Maps
+
+__Click-map__: You can use the two built-in components of rviz to click on the map to generate static and dynamic obstacles, respectively, like this:
+
+
+# Testing Dynamic_Planner
+
+
+
+# Known Issues:
+
+(1)
+
+(2)
