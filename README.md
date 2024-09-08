@@ -75,12 +75,31 @@ eval "$RUN_AFTER_BASHRC"
 
 __Click-map__: You can use the two built-in components of rviz to click on the map to generate static and dynamic obstacles, respectively, like this:
 
+```
+cd dynamic_planner_ws
+source devel/setup.bash
+./create_dyn_map.sh
+```
+
+Then in a new window, use the following command to save the published map as a rosbag file.
+
+```
+source devel/setup.bash
+./save_dyn_map.sh
+```
+It is recommended to save a rosbag for at least ```30``` seconds to ensure a more coherent map. After running the script for more than 30 seconds, use ```Ctrl+C``` to pause the script, and you will obtain a file named ```dyn_map.bag```. This file will be used in the subsequent planning stage.
+
+Please ensure that you have granted executable permissions to these two sh files before executing them.
+
+![click_map](gif/click_map.gif)
 
 # Test Dynamic_Planner
 
+```
+cd dynamic_planner_ws
+source devel/setup.bash
+./dynamic_planner.sh
+```
+
 ![Example](https://github.com/SmartGroupSystems/Dynamic-Planner/blob/main/gif/tutieshi_640x360_18s.gif)
 
-
-# Real World Experiment
-
-This document includes DSP-MAP, therefore it requires some components of dsp-map. For the configuration of dsp-map, please refer [DSP-MAP](https://github.com/g-ch/DSP-map). If you do not wish to use dsp-map and only want to use the simulator, you can delete the dsp-map folder from the source package and compile without it.
