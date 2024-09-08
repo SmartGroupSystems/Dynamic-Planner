@@ -103,3 +103,6 @@ source devel/setup.bash
 
 ![Example](https://github.com/SmartGroupSystems/Dynamic-Planner/blob/main/gif/tutieshi_640x360_18s.gif)
 
+The core parts of dynamic obstacle avoidance refer to ```gvo.cpp``` and ```bspline_race.cpp```. Here, if a finite state machine is added to handle some extreme cases, the algorithm's performance will improve. 
+
+If the planner indicates ```VO is complex... the result is not reliable,``` it means the collision avoidance was not successful. This issue may arise if obstacles are too dense or if the initial position is too close to the obstacles. I will work on improving and upgrading this in future developments. If you are interested, you are also welcome to give it a try!
