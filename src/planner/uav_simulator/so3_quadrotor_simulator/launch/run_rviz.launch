@@ -1,0 +1,5 @@
+<launch>  
+   <node name="rviz" pkg="rviz" type="rviz"
+      args="-d $(find so3_quadrotor_simulator)/config/rviz.rviz"
+      />
+ </launch>

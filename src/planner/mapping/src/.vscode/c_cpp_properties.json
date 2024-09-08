@@ -1,0 +1,35 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/uav/flag_planner/devel/include/**",
+        "/home/uav/realsense_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/uav/flag_planner/src/planner/bspline_race/include/**",
+        "/home/uav/flag_planner/src/VINS-Fusion/camera_models/include/**",
+        "/home/uav/flag_planner/src/planner/dynamic_env_generator/include/**",
+        "/home/uav/flag_planner/src/planner/grid_path_searcher/include/**",
+        "/home/uav/flag_planner/src/planner/mapping/include/**",
+        "/home/uav/flag_planner/src/planner/uav_simulator/mockamap/include/**",
+        "/home/uav/flag_planner/src/Utils/multi_map_server/include/**",
+        "/home/uav/flag_planner/src/Utils/pose_utils/include/**",
+        "/home/uav/flag_planner/src/Utils/quadrotor_msgs/include/**",
+        "/home/uav/realsense_ws/src/realsense-ros/realsense2_camera/include/**",
+        "/home/uav/flag_planner/src/planner/uav_simulator/so3_control/include/**",
+        "/home/uav/flag_planner/src/planner/uav_simulator/so3_quadrotor_simulator/include/**",
+        "/home/uav/flag_planner/src/Utils/uav_utils/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

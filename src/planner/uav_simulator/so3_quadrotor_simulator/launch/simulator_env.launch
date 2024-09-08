@@ -1,0 +1,13 @@
+<launch>  
+   <!--node pkg="so3_control" name="control_example" type="control_example" output="screen"/-->
+   <node name="rviz" pkg="rviz" type="rviz"
+      args="-d $(find so3_quadrotor_simulator)/config/rviz.rviz"
+      />
+    
+    <!-- <node name="fpv_rviz" pkg="rviz" type="rviz"
+      args="-d $(find so3_quadrotor_simulator)/config/fpv_gvo.rviz"
+      /> -->
+ </launch>
+
+
+

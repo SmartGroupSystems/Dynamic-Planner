@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- 启动节点 -->
+    <node name="mapping" pkg="mapping" type="mapping" output="screen">
+    <!-- 地图尺寸信息 -->
+    <param name="grid_map/resolution" value="0.1"/>
+    <param name="grid_map/map_size_x" value="60.0"/>
+    <param name="grid_map/map_size_y" value="60.0"/>
+    <param name="grid_map/map_size_z" value="5.0"/>
+    <param name="grid_map/local_update_range_x" value="5.0"/>
+    <param name="grid_map/local_update_range_y" value="5.0"/>
+    <param name="grid_map/local_update_range_z" value="4.5"/>
+    <param name="grid_map/obstacles_inflation" value="0.1"/>
+
+    <!-- 相机参数信息 -->
+    <param name="grid_map/cx" value="321.04638671875"/>
+    <param name="grid_map/cy" value="243.44969177246094"/>
+    <param name="grid_map/fx" value="387.229248046875"/>
+    <param name="grid_map/fy" value="387.229248046875"/>
+    
+    <!-- 深度滤波器 -->
+    <param name="grid_map/use_depth_filter" value="true"/>
+    <param name="grid_map/depth_filter_tolerance" value="0.15"/>
+    <param name="grid_map/depth_filter_maxdist"   value="5.0"/>
+    <param name="grid_map/depth_filter_mindist"   value="0.2"/>
+    <param name="grid_map/depth_filter_mparamin"    value="1"/>
+    <param name="grid_map/k_depth_scaling_factor" value="1000.0"/>
+    <param name="grid_map/skip_pixel" value="1"/>
+
+    <!-- 概率估计设置 -->
+    <param name="grid_map/p_hit" value="0.65"/>
+    <param name="grid_map/p_miss" value="0.35"/>
+    <param name="grid_map/p_min" value="0.12"/>
+    <param name="grid_map/p_max" value="0.90"/>
+    <param name="grid_map/p_occ" value="0.80"/>
+    <param name="grid_map/min_ray_length" value="0.1"/>
+    <param name="grid_map/max_ray_length" value="4.5"/>
+
+    <!-- 可视化 -->
+    <param name="grid_map/virtual_ceil_height" value="2.5"/>
+    <param name="grid_map/visualization_truncate_height" value="2.4"/>
+    <param name="grid_map/show_occ_time" value="false"/>
+    
+    <!-- 订阅消息类型 -->
+    <param name="grid_map/pose_type" value="2"/>  
+    <param name="grid_map/frame_id" value="world"/>
+    <param name="grid_map/local_map_mparamin" value="30"/>
+    <param name="grid_map/ground_height" value="-0.01"/>
+    <remap from = "/mock_map" to= "/map_generator/click_map"/>
+    <remap from = "/odom_visualization/pose" to= "/odom_visualization/pose"/>
+    
+    </node>
+    
+    <node name="dynamic_local" pkg="mapping" type="dynamic_local" output="screen">
+    	<param name="sensing_range" value="6.0"/>  
+    </node>
+</launch>

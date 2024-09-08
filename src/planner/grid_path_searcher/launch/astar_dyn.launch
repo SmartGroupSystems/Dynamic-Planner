@@ -1,0 +1,38 @@
+<launch>
+
+<arg name="resolution" default="0.2"/> <!-- 栅格边长 -->
+
+<arg name="map_size_x" default="60.0"/>
+<arg name="map_size_y" default="60.0"/>
+<arg name="map_size_z" default=" 3.0"/> <!-- 地图尺寸 -->
+
+<arg name="start_x" default=" 0.0"/>
+<arg name="start_y" default=" 0.0"/> <!-- 起点 -->
+<!-- <arg name="start_z" default=" 1.0"/> -->
+
+<arg name="sight_radius" default=" 5.0"/> <!-- 视野半径 -->
+<arg name="interval" default=" 0.5"/>    <!-- 重规划半径 -->
+
+  <node pkg="grid_path_searcher" type="astar_node" name="astar_node" output="screen" required = "true">
+     <!-- FIXME 修改remap -->
+      <remap from="~waypoints"       to="/move_base_simple/goal"/>
+      <remap from="~map"             to="/grid_map/occupancy_inflate"/> 
+      <!-- <remap from="~pose"       to="/bs_aim"/> -->
+      <!-- <remap from="~pose"       to="/mavros/local_position/pose_orb"/>   -->
+      <remap from="~pose"            to="/mavbs/setpoint_raw/local"/> 
+
+      <param name="map/resolution"   value="$(arg resolution)" />
+      <param name="map/x_size"       value="$(arg map_size_x)"/>
+      <param name="map/y_size"       value="$(arg map_size_y)"/>
+      <!-- <param name="map/z_size"       value="$(arg map_size_z)"/> -->
+
+      <param name="planning/start_x" value="$(arg start_x)"/>
+      <param name="planning/start_y" value="$(arg start_y)"/>
+      <!-- <param name="planning/start_z" value="$(arg start_z)"/> -->
+
+      <param name="planning/sight_radius" value="$(arg sight_radius)"/>
+      <param name="planning/interval_" value="$(arg interval)"/>
+
+  </node>
+
+</launch>

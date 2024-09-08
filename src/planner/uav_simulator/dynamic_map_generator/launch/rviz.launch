@@ -1,0 +1,7 @@
+<launch>
+  <arg name="rviz_config" default="$(find map_generator)/launch/default.rviz"/>
+  <node pkg="rviz"
+    type="rviz"
+    name="rviz"
+    args="-d $(arg rviz_config)"/>
+</launch>

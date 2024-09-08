@@ -1,0 +1,70 @@
+<launch>
+  <arg name="traj_order" 		value="3" />
+  <arg name="dimension" 		value="2" />
+  <arg name="TrajSampleRate" 		value="50" />
+  <arg name="max_vel" 			value="1.5" />
+  <arg name="max_acc" 			value="2.5" />
+  <arg name="goal_x" 			value="9.0" />
+  <arg name="goal_y" 			value="-10.0" />
+  <arg name="lambda1" 			value="5.0" />
+  <arg name="lambda2" 			value="1.0" />
+  <arg name="lambda3" 			value="10.0" />  
+  <arg name="esdf_collision" 		value="2.0" /> 
+  <arg name="frame" 			value="world" />   
+  <arg name="map_resolution" 		value="0.1" />
+
+  <!-- 可能存在溢出问题导致eigen报错，目前的做法是单纯扩大地图，后面改进 -->
+  <arg name="start_x" 			value="-29.95" />
+  <arg name="start_y" 			value="29.95" />  
+
+  <arg name="safe_distance" 		value="6.0" /> 
+  <!-- <arg name="safe_distance" 		value="0.0" />  -->
+  <arg name="dist_p" 			value="0.5" />
+
+  <arg name="v_safe" 			value="8.0" />
+  <arg name="quad_r" 			value="0.25" />
+  <arg name="K1" 			    value="1.0" />
+  <arg name="K2" 			    value="0.0" />
+  <arg name="K3" 			    value="10.0" />
+
+  <arg name="vmap_x" 			value="60" />
+  <arg name="vmap_y" 			value="60" />
+  <arg name="v_x" 			  value="-3.0" />
+  <arg name="v_y" 			  value="3.0" />
+
+  <!--启动规划器，生成轨迹 -->
+  <node pkg="bspline_race" name="flag_planner" type="flag_planner" output="screen">	
+    <param name="planning/traj_order" value="$(arg traj_order)"/>
+    <param name="planning/dimension" value="$(arg dimension)" />
+    <param name="planning/TrajSampleRate" value="$(arg TrajSampleRate)" />
+    <param name="planning/max_vel" value="$(arg max_vel)" />
+    <param name="planning/max_acc" value="$(arg max_acc)" />
+    <param name="planning/goal_x" value="$(arg goal_x)" />	
+    <param name="planning/goal_y" value="$(arg goal_y)" />
+    <param name="planning/lambda1" value="$(arg lambda1)" />
+    <param name="planning/lambda2" value="$(arg lambda2)" />
+    <param name="planning/lambda3" value="$(arg lambda3)" />
+    <param name="planning/frame" value="$(arg frame)" />
+    <param name="planning/map_resolution" value="$(arg map_resolution)" />
+    <param name="planning/start_x" value="$(arg start_x)" />
+    <param name="planning/start_y" value="$(arg start_y)" />
+    <param name="planning/safe_distance" value="$(arg safe_distance)" />
+    <param name="planning/esdf_collision" value="$(arg esdf_collision)" />
+    <param name="planning/dist_p" value="$(arg dist_p)" />
+
+    <param name="gvo/K1" value="$(arg K1)" />
+    <param name="gvo/K2" value="$(arg K2)" />
+    <param name="gvo/K3" value="$(arg K3)" />
+    <param name="gvo/v_safe" value="$(arg v_safe)" />
+    <param name="gvo/quad_r" value="$(arg quad_r)" />
+
+  </node>
+  
+  <node pkg="bspline_race" name="traj_server" type="traj_server" output="screen">	
+  </node>
+  
+  <!-- <node name="dynamic_local" pkg="bspline_race" type="dynamic_local" output="screen">
+    <param name="sensing_range" value="7.0"/>  
+  </node> -->
+  
+</launch>
