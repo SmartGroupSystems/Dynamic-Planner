@@ -16,6 +16,6 @@ sleep 2;
 RUN_AFTER_BASHRC="source devel/setup.bash;roslaunch grid_path_searcher astar_dyn.launch" gnome-terminal --title="Astar" --tab & 
 sleep 2 ;
 
-RUN_AFTER_BASHRC="source devel/setup.bash;roslaunch bspline_race planning_with_sta_dyn.launch" gnome-terminal --title="Bspline" --tab &
+RUN_AFTER_BASHRC="source devel/setup.bash;roslaunch bspline_race planning_with_sta_dyn.launch" gnome-terminal --title="Opt" --tab &
 wait
 exit 0

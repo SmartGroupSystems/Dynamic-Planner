@@ -52,7 +52,10 @@ add_library( bspline_race
    src/gvo.cpp
    src/EdtTransform.cpp
    )
-   
+
+target_link_libraries(bspline_race
+  ${catkin_LIBRARIES}
+)
 add_executable( flag_planner 
     src/test_planning.cpp
  )
@@ -64,5 +67,3 @@ target_link_libraries(flag_planner
 
 add_executable(traj_server src/traj_server.cpp)
 target_link_libraries(traj_server ${catkin_LIBRARIES})  
-# add_executable(dynamic_local src/dynamic_local.cpp) 
-# target_link_libraries(dynamic_local ${catkin_LIBRARIES}) 

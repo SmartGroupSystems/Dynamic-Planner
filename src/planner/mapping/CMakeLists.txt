@@ -26,7 +26,7 @@ find_package(PCL 1.7 REQUIRED)
 catkin_package(
  INCLUDE_DIRS include
  LIBRARIES mapping
- CATKIN_DEPENDS roscpp std_msgs tf
+ CATKIN_DEPENDS roscpp std_msgs tf map_generator
 #  DEPENDS system_lib
 )
 
@@ -37,6 +37,7 @@ include_directories(
     ${Eigen3_INCLUDE_DIRS} 
     ${PCL_INCLUDE_DIRS}
     ${OpenCV_INCLUDE_DIRS}
+    ${CMAKE_CURRENT_BINARY_DIR}/devel/include
 )
 
 link_directories(${PCL_LIBRARY_DIRS})
