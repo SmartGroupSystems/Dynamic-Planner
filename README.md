@@ -22,8 +22,20 @@ Paper:
 
 (2) __Eigen Error__:
 
+(3) __A-star Error__:
+
 # Description
 This repository mainly contains the following modules: 
+
+(1)```bspline_race```: This module is the trajectory optimization module, primarily responsible for backend optimization, where the ```NLopt``` optimization library is used.
+
+(2)```grid_path_searcher```: The path search module utilizes the A-star algorithm.
+
+(3)```mapping```: A lightweight mapping module.
+
+(4)```uav_simulator```: A lightweight quadrotor simulator.
+
+We referred to a significant amount of code from [Fast-Planner](https://github.com/HKUST-Aerial-Robotics/Fast-Planner) while writing our own code, and we express our deepest gratitude to the authors for their contributions.
 
 # Compile
 __Tested environment__: Ubuntu 20.04 + ROS Noetic
