@@ -16,10 +16,14 @@ Paper:
 
 ```
 
+# Known Issues:
+
+(1) __Compile Error__:
+
+(2) __Eigen Error__:
+
 # Description
 This repository mainly contains the following modules: 
-
-
 
 # Compile
 __Tested environment__: Ubuntu 20.04 + ROS Noetic
@@ -37,8 +41,3 @@ __Click-map__: You can use the two built-in components of rviz to click on the m
 
 # Real World Experiment
 
-# Known Issues:
-
-(1)
-
-(2)
