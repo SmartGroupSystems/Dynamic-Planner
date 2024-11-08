@@ -10,7 +10,7 @@
 #include <visualization_msgs/MarkerArray.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <geometry_msgs/TwistStamped.h>
-#include <mavros_msgs/PositionTarget.h>
+// #include <mavros_msgs/PositionTarget.h>
 #include <nav_msgs/Odometry.h>
 #include <nav_msgs/Path.h>
 #include <std_msgs/Float64MultiArray.h>

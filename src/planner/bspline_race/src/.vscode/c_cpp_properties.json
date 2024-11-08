@@ -6,26 +6,13 @@
         "limitSymbolsToIncludedHeaders": false
       },
       "includePath": [
-        "/home/uav/dynamic_planner/devel/include/**",
-        "/opt/ros/melodic/include/**",
-        "/home/uav/dynamic_planner/src/bspline_race/include/**",
-        "/home/uav/dynamic_planner/src/dynamic_env_generator_v0.0.0/dynamic_env_generator/include/**",
-        "/home/uav/dynamic_planner/src/grid_path_searcher/include/**",
-        "/home/uav/dynamic_planner/src/mapping/include/**",
-        "/home/uav/dynamic_planner/src/uav_simulator/mockamap/include/**",
-        "/home/uav/dynamic_planner/src/uav_simulator/Utils/multi_map_server/include/**",
-        "/home/uav/dynamic_planner/src/uav_simulator/Utils/pose_utils/include/**",
-        "/home/uav/dynamic_planner/src/uav_simulator/Utils/quadrotor_msgs/include/**",
-        "/home/uav/dynamic_planner/src/uav_simulator/so3_control/include/**",
-        "/home/uav/dynamic_planner/src/uav_simulator/so3_quadrotor_simulator/include/**",
-        "/home/uav/dynamic_planner/src/uav_simulator/Utils/uav_utils/include/**",
-        "/usr/include/**"
+        "${workspaceFolder}/**"
       ],
-      "name": "ROS",
-      "intelliSenseMode": "gcc-x64",
+      "name": "linux-gcc-x64",
+      "intelliSenseMode": "linux-gcc-x64",
       "compilerPath": "/usr/bin/gcc",
-      "cStandard": "gnu11",
-      "cppStandard": "c++14"
+      "cStandard": "${default}",
+      "cppStandard": "${default}"
     }
   ],
   "version": 4
