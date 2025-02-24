@@ -44,6 +44,8 @@ __Tested environment__: Ubuntu 20.04 + ROS Noetic
 
 The entire project depends on ```NLOPT```. First, please refer to [NLOPT](https://nlopt.readthedocs.io/en/latest/NLopt_Installation/) to install the NLOPT library.
 
+Also, you need to have mavros.
+
 2.Download and compile the repo
 
 ```
