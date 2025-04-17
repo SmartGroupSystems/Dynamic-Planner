@@ -20,6 +20,9 @@ Paper:
 
 (1) __Compile Error__: If the compilation indicates that ```<bspline_race/BsplineTraj.h>``` or ```<map_generator/dynamic_obs.h>``` are missing, please try recompiling a few times.
 
+-----
+I have already add these two files in the folder,,,,
+
 (2) __Eigen Error__: If the Opt window reports an error related to Eigen matrices, it's likely due to the map being allocated too small, leading to a memory overflow error. You can resolve this by modifying the ```map_size``` parameter in ```mapping_sta_dyn.launch```, ```astar_dyn.launch```, and ```planning_with_sta_dyn.launch```. Note that in ```planning_with_sta_dyn```, the parameters ```start_x``` and ```start_y``` need to be adjusted. These values represent the center of the grid at the bottom-left corner of the map, so they must be decimals. For example, if the map size is ```80.0```, then ```start_x = -80/2 + 0.05 = -39.95``` and ```start_y = 80/2 - 0.05 = 39.95```. Since the code has been maintained for a long time, some bugs make it inconvenient to modify, so we'll keep it as is for now... I plan to refactor the entire project in future development.
 
 (3) __A-star Error__: If sometimes sending a target doesn't elicit a response, it could be because the A* algorithm has stopped working. This happens when there are no point clouds in the local map, causing the A* algorithm to halt. Restarting the project can resolve this issue.
