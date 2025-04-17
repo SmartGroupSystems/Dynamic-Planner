@@ -22,6 +22,7 @@ Paper:
 
 -----
 I have already add these two files in the folder,,,,
+please place them under the ```/devel/include/map_generator``` and ```/devel/include/bspline_race``` directory and try testing again.
 
 (2) __Eigen Error__: If the Opt window reports an error related to Eigen matrices, it's likely due to the map being allocated too small, leading to a memory overflow error. You can resolve this by modifying the ```map_size``` parameter in ```mapping_sta_dyn.launch```, ```astar_dyn.launch```, and ```planning_with_sta_dyn.launch```. Note that in ```planning_with_sta_dyn```, the parameters ```start_x``` and ```start_y``` need to be adjusted. These values represent the center of the grid at the bottom-left corner of the map, so they must be decimals. For example, if the map size is ```80.0```, then ```start_x = -80/2 + 0.05 = -39.95``` and ```start_y = 80/2 - 0.05 = 39.95```. Since the code has been maintained for a long time, some bugs make it inconvenient to modify, so we'll keep it as is for now... I plan to refactor the entire project in future development.
 
